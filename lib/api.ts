@@ -11,7 +11,6 @@ export const fetchMoviesByGenre = async (genreId: number): Promise<Movie[]> => {
   return data.results;
 };
 
-// Fetch trailer for a specific movie
 export const fetchMovieTrailer = async (
   movieId: number
 ): Promise<string | null> => {
@@ -19,8 +18,12 @@ export const fetchMovieTrailer = async (
     `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
   );
   const data = await res.json();
+
+  if (!Array.isArray(data.results)) return null;
+
   const trailer = data.results.find(
     (vid: VideoResult) => vid.type === "Trailer" && vid.site === "YouTube"
   );
+
   return trailer?.key || null;
 };
