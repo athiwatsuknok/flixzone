@@ -1,6 +1,10 @@
 import { Movie, VideoResult } from "@/types";
 
-const API_KEY = process.env.TMDB_API_KEY;
+const API_KEY = process.env.NEXT_PUBLIC_TMDB_API_KEY;
+
+if (!API_KEY) {
+  throw new Error("❌ TMDB_API_KEY is missing! Add it to your .env.local");
+}
 
 // Fetch movies by genre ID
 export const fetchMoviesByGenre = async (genreId: number): Promise<Movie[]> => {
