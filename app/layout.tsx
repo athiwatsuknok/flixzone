@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     description:
       "Browse movies by genre, watch trailers, and discover top-rated films on FlixZone.",
     type: "website",
-    url: "https://yourdomain.com",
+    url: "https://flixzone-ochre.vercel.app/",
     images: [
       {
-        url: "https://yourdomain.com/og-image.jpg",
+        url: "https://flixzone-ochre.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "FlixZone Movie Preview",
@@ -48,7 +48,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FlixZone",
     description: "Discover and explore movies by genre with trailers and more.",
-    images: ["https://yourdomain.com/og-image.jpg"],
   },
 };
 
